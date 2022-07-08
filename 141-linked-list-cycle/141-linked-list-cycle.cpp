@@ -21,7 +21,7 @@ public:
             }
             slow = slow -> next;
             if(slow == fast) {
-                return slow;
+                return true;
             }
         }
         return false;
