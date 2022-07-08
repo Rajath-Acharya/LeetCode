@@ -24,6 +24,7 @@ public:
         ListNode* evenHead = even;
         int cnt = 3;
         ListNode* start = even -> next;
+        
         while(start != NULL) {
             if(cnt % 2 == 0) {
                 even -> next = start;
@@ -35,6 +36,7 @@ public:
             cnt++;
             start = start -> next;
         }
+        
         odd -> next = NULL;
         even -> next = NULL;
         odd -> next = evenHead;
