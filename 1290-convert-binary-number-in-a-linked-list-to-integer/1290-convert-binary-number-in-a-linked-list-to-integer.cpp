@@ -26,9 +26,8 @@ public:
         int ans = 0, i = 0;
         while(curr != NULL) {
             int val = curr -> val;
-            ans = ans + val * pow(2, i);
+            ans = ans + val * pow(2, i++);
             curr = curr -> next;
-            i++;
         }
         return ans;
     }
