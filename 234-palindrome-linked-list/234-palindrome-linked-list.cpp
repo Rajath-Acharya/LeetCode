@@ -13,10 +13,12 @@ public:
     ListNode* getMiddleNode(ListNode* head) {
         ListNode* slow = head;
         ListNode* fast = head;
+        
         while(fast != NULL && fast->next != NULL) {
             slow = slow->next;
             fast = fast -> next -> next;
         }
+        
         return slow;
     }
     
@@ -24,12 +26,14 @@ public:
         ListNode* prev = NULL;
         ListNode* curr = head;
         ListNode* next = NULL;
+        
         while(curr != NULL) {
             next = curr -> next;
             curr -> next = prev;
             prev = curr;
             curr = next;
         }
+        
         return prev;
     }
     
@@ -38,17 +42,18 @@ public:
             return true;
         }
         
-        ListNode* mid = getMiddleNode(head);
-        ListNode* right = reverse(mid);
-        ListNode* left = head;
+        ListNode* midNode = getMiddleNode(head);
+        ListNode* rightNode = reverse(midNode);
+        ListNode* leftNode = head;
         
-        while(right != NULL) {
-            if(right->val != left->val) {
+        while(rightNode != NULL) {
+            if(rightNode->val != leftNode->val) {
                 return false;
             }
-            right = right->next;
-            left = left->next;
+            rightNode = rightNode->next;
+            leftNode = leftNode->next;
         }
+        
         return true;
     }
 };
