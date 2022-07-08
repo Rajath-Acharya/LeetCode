@@ -42,7 +42,7 @@ public:
         ListNode* right = reverse(mid);
         ListNode* left = head;
         
-        while(right) {
+        while(right != NULL) {
             if(right->val != left->val) {
                 return false;
             }
